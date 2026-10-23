@@ -62,7 +62,7 @@ html.lenis body {
 /* Chromium supports SVG filters inside backdrop-filter, which gives the refracted edge */
 @supports (backdrop-filter: url(#x)) {
   .liquid-glass.refract {
-    backdrop-filter: url(#liquid-glass) blur(6px) saturate(170%);
+    backdrop-filter: blur(14px) url(#liquid-glass) saturate(170%);
   }
 }
 .liquid-glass::before {
@@ -106,7 +106,7 @@ html.lenis body {
   z-index: 2;
 }
 .liquid-glass.dark {
-  background: linear-gradient(135deg, rgba(43, 31, 28, 0.55), rgba(43, 31, 28, 0.3));
+  background: linear-gradient(135deg, rgba(43, 31, 28, 0.78), rgba(43, 31, 28, 0.6));
 }
 
 /* ---------- Marquee ---------- */

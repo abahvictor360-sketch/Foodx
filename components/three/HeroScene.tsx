@@ -1,7 +1,7 @@
 "use client";
 
-import { Canvas, useFrame } from "@react-three/fiber";
-import { Float, MeshTransmissionMaterial } from "@react-three/drei";
+import { Canvas, useFrame, useThree } from "@react-three/fiber";
+import { Float } from "@react-three/drei";
 import { useMemo, useRef } from "react";
 import * as THREE from "three";
 import { Donut } from "./Donut";
@@ -9,12 +9,18 @@ import { StudioLights } from "./Lights";
 
 function Rig({ children }: { children: React.ReactNode }) {
   const g = useRef<THREE.Group>(null);
+  // Shrink the scene to fit narrow canvases (the donut is ~3.6 units wide with its bubbles)
+  const fit = useThree((s) => Math.min(1, s.viewport.width / 4.2, s.viewport.height / 3.6));
   useFrame((state, dt) => {
     if (!g.current) return;
     g.current.rotation.y = THREE.MathUtils.damp(g.current.rotation.y, state.pointer.x * 0.35, 3, dt);
     g.current.rotation.x = THREE.MathUtils.damp(g.current.rotation.x, -state.pointer.y * 0.2, 3, dt);
   });
-  return <group ref={g}>{children}</group>;
+  return (
+    <group ref={g} scale={fit}>
+      {children}
+    </group>
+  );
 }
 
 function GlassBubble({ position, scale }: { position: [number, number, number]; scale: number }) {
@@ -22,18 +28,18 @@ function GlassBubble({ position, scale }: { position: [number, number, number]; 
     <Float speed={2} floatIntensity={1.4} rotationIntensity={0.6}>
       <mesh position={position} scale={scale}>
         <sphereGeometry args={[1, 48, 48]} />
-        <MeshTransmissionMaterial
-          samples={4}
-          resolution={256}
-          thickness={0.6}
-          roughness={0.05}
-          chromaticAberration={0.25}
-          anisotropy={0.2}
-          distortion={0.3}
-          distortionScale={0.4}
-          ior={1.25}
+        {/* Faked glass: transmission renders black on some mobile GPUs over a transparent canvas */}
+        <meshPhysicalMaterial
           color="#fff6ea"
-          backside={false}
+          transparent
+          opacity={0.18}
+          roughness={0.02}
+          metalness={0.1}
+          clearcoat={1}
+          iridescence={1}
+          iridescenceIOR={1.3}
+          envMapIntensity={2.5}
+          depthWrite={false}
         />
       </mesh>
     </Float>
@@ -92,8 +98,8 @@ export default function HeroScene({ icing }: { icing: string }) {
         <Float speed={1.6} rotationIntensity={0.4} floatIntensity={0.8}>
           <Donut icing={icing} rotation={[-1.05, 0.25, 0]} scale={1.15} />
         </Float>
-        <GlassBubble position={[1.9, 1.1, 0.6]} scale={0.35} />
-        <GlassBubble position={[-1.9, -1.0, 0.8]} scale={0.25} />
+        <GlassBubble position={[1.5, 1.0, 0.6]} scale={0.32} />
+        <GlassBubble position={[-1.5, -0.9, 0.8]} scale={0.22} />
       </Rig>
     </Canvas>
   );

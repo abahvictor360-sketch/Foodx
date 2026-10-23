@@ -28,13 +28,13 @@ const ease = [0.22, 1, 0.36, 1] as const;
 export function Hero() {
   const [flavour, setFlavour] = useState(0);
   return (
-    <section className="doodle-bg relative min-h-[100svh] overflow-hidden bg-cocoa pt-24">
+    <section className="doodle-bg relative min-h-[100svh] overflow-hidden bg-cocoa pt-28 md:pt-32">
       <div className="mx-auto max-w-6xl px-5">
         <motion.h1
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease }}
-          className="text-center font-display text-[17vw] uppercase leading-[0.85] text-cream md:text-[9.5rem]"
+          className="text-center font-display text-[min(17vw,24vh)] uppercase leading-[0.85] text-cream md:text-[min(9.5rem,24vh)]"
         >
           Bake &amp; Shake
         </motion.h1>
@@ -42,7 +42,7 @@ export function Hero() {
 
       <div className="relative mx-auto grid max-w-6xl items-center gap-6 px-5 md:grid-cols-[1fr_1.3fr_1fr]">
         <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.3, ease }} className="order-2 md:order-1">
-          <p className="font-condensed text-4xl leading-[1.05] md:text-5xl">
+          <p className="font-condensed text-4xl leading-[1.05] md:text-4xl lg:text-5xl">
             Baking smiles one
             <br />
             donut at a time
@@ -57,7 +57,7 @@ export function Hero() {
           </div>
         </motion.div>
 
-        <div className="order-1 h-[46vh] min-h-[320px] md:order-2 md:h-[520px]">
+        <div className="order-1 h-[46vh] min-h-[320px] md:order-2 md:h-[min(520px,62vh)]">
           <HeroScene icing={FLAVOURS[flavour].icing} />
         </div>
 
