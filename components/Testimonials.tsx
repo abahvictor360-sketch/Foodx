@@ -36,10 +36,10 @@ export function Testimonials() {
           </motion.figure>
         </AnimatePresence>
       </div>
-      <button onClick={() => go(-1)} className="absolute left-4 top-1/2 -translate-y-1/2 p-2 text-2xl" aria-label="Previous review">
+      <button onClick={() => go(-1)} className="absolute left-1 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center text-2xl md:left-4" aria-label="Previous review">
         ‹
       </button>
-      <button onClick={() => go(1)} className="absolute right-4 top-1/2 -translate-y-1/2 p-2 text-2xl" aria-label="Next review">
+      <button onClick={() => go(1)} className="absolute right-1 top-1/2 grid h-11 w-11 -translate-y-1/2 place-items-center text-2xl md:right-4" aria-label="Next review">
         ›
       </button>
       <div className="mt-6 flex justify-center gap-2">

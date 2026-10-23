@@ -28,7 +28,7 @@ export function CartDrawer() {
       {open && (
         <>
           <motion.div
-            className="fixed inset-0 z-[60] bg-ink/40"
+            className="fixed inset-0 z-[60] bg-ink/60"
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -43,7 +43,7 @@ export function CartDrawer() {
             aria-label="Shopping cart"
             data-lenis-prevent
           >
-            <LiquidGlass dark className="flex h-full flex-col rounded-3xl p-5">
+            <LiquidGlass dark className="flex h-full flex-col rounded-3xl !bg-cocoa-deep/95 p-5">
               <div className="flex items-center justify-between">
                 <h2 className="font-condensed text-3xl font-bold uppercase">Your box</h2>
                 <button onClick={() => setOpen(false)} className="grid h-9 w-9 place-items-center rounded-full bg-cream/15 text-xl" aria-label="Close cart">

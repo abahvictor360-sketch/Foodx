@@ -62,7 +62,7 @@ export function ScrollWorld() {
         ))}
 
         <motion.div style={{ opacity: finaleOpacity }} className="absolute inset-x-0 bottom-12 flex flex-col items-center gap-4 px-4 text-center">
-          <h3 className="text-shadow-soft font-display text-5xl uppercase leading-none text-cream md:text-7xl">Now come taste it</h3>
+          <h3 className="text-shadow-soft font-display text-4xl uppercase leading-none text-cream sm:text-5xl md:text-7xl">Now come taste it</h3>
           <Link href="/menu" className="btn btn-cream">
             See the full menu »
           </Link>

@@ -15,7 +15,10 @@ export function MenuGrid() {
   return (
     <section className="bg-cherry pb-24">
       <div className="sticky top-20 z-30 mx-auto max-w-6xl px-5 pt-6 md:top-24">
-        <LiquidGlass dark className="flex gap-1 overflow-x-auto rounded-full p-1.5 [scrollbar-width:none]">
+        <LiquidGlass
+          dark
+          className="flex gap-1 overflow-x-auto rounded-full p-1.5 [scrollbar-width:none] [mask-image:linear-gradient(90deg,#000_85%,transparent)] md:[mask-image:none]"
+        >
           {CATEGORIES.map((c) => (
             <button
               key={c.id}

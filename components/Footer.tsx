@@ -24,7 +24,7 @@ export function Footer() {
         </div>
         <div>
           <p className="font-condensed text-lg uppercase tracking-wide">Explore</p>
-          <ul className="mt-3 space-y-1.5 font-mono text-xs text-cream/85">
+          <ul className="mt-2 font-mono text-xs text-cream/85">
             {[
               ["/menu", "Menu"],
               ["/gallery", "Gallery"],
@@ -33,7 +33,7 @@ export function Footer() {
               ["/cart", "Checkout"],
             ].map(([h, l]) => (
               <li key={h}>
-                <Link href={h} className="hover:text-cream">
+                <Link href={h} className="inline-block py-2 hover:text-cream">
                   {l}
                 </Link>
               </li>

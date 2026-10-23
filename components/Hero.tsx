@@ -37,7 +37,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease }}
-          className="text-center font-display text-[min(17vw,24vh)] uppercase leading-[0.85] text-cream md:text-[min(9.5rem,24vh)]"
+          className="text-center font-display text-[min(17vw,24vh)] uppercase leading-[0.95] text-cream md:leading-[0.85] md:text-[min(9.5rem,24vh)]"
         >
           Coffee &amp; Cream
         </motion.h1>

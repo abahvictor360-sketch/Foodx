@@ -98,7 +98,7 @@ export function Navbar() {
             exit={{ opacity: 0, y: -10 }}
             className="md:hidden"
           >
-            <LiquidGlass dark className="mx-auto mt-2 flex max-w-6xl flex-col rounded-2xl p-3">
+            <LiquidGlass dark className="mx-auto mt-2 flex max-w-6xl flex-col rounded-2xl !bg-cocoa-deep/95 p-3">
               {LINKS.map((l) => (
                 <Link
                   key={l.href}
