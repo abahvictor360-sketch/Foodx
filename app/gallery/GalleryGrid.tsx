@@ -22,6 +22,12 @@ const SHOTS: Shot[] = [
   { src: "/images/cinnamon-rolls.webp", alt: "Cinnamon swirls", w: 662, h: 574, cutout: "#f6eecf" },
   { src: "/images/milkshake-trio.webp", alt: "Three milkshakes", w: 589, h: 605, cutout: "#f3b9cb" },
   { src: "/images/donut-float.webp", alt: "Pink glazed donut", w: 653, h: 792, cutout: "#921c1f" },
+  { src: "/images/grilled-cheese-scene.jpg", alt: "Bacon grilled cheese sandwich", w: 736, h: 1104 },
+  { src: "/images/cupcake-berry.webp", alt: "Strawberry cloud cupcake", w: 624, h: 665, cutout: "#f3b9cb" },
+  { src: "/images/cream-horns-scene.jpg", alt: "Vanilla cream horns dusted with icing sugar", w: 736, h: 981 },
+  { src: "/images/banoffee-scene.jpg", alt: "Banoffee cheesecake slice", w: 526, h: 577 },
+  { src: "/images/pain-au-chocolat-scene.jpg", alt: "Pain au chocolat", w: 600, h: 900 },
+  { src: "/images/shortcake-scene.jpg", alt: "Strawberry shortcake slice", w: 700, h: 1010 },
 ];
 
 export function GalleryGrid() {

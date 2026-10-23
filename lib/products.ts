@@ -1,4 +1,4 @@
-export type Category = "donuts" | "cupcakes" | "pastries" | "drinks";
+export type Category = "donuts" | "cupcakes" | "pastries" | "savoury" | "drinks";
 
 export type Product = {
   id: string;
@@ -15,6 +15,7 @@ export const CATEGORIES: { id: Category | "all"; label: string }[] = [
   { id: "donuts", label: "Donuts" },
   { id: "cupcakes", label: "Cupcakes & Cakes" },
   { id: "pastries", label: "Pastries" },
+  { id: "savoury", label: "Savoury" },
   { id: "drinks", label: "Shakes & Coffee" },
 ];
 
@@ -87,6 +88,31 @@ export const PRODUCTS: Product[] = [
     blurb: "Dark chocolate base, strawberry buttercream, dipped berry.",
   },
   {
+    id: "berry-cupcake",
+    name: "Strawberry Cloud Cupcake",
+    price: 2800,
+    image: "/images/cupcake-berry.webp",
+    category: "cupcakes",
+    blurb: "Vanilla sponge, strawberry buttercream, fresh berries on top.",
+  },
+  {
+    id: "shortcake",
+    name: "Strawberry Shortcake Slice",
+    price: 4500,
+    image: "/images/shortcake.webp",
+    category: "cupcakes",
+    blurb: "Three layers of sponge, whipped cream and chopped strawberries.",
+  },
+  {
+    id: "banoffee-cheesecake",
+    name: "Banoffee Cheesecake",
+    price: 5000,
+    image: "/images/banoffee-cheesecake.webp",
+    category: "cupcakes",
+    blurb: "Peanut cheesecake, dulce de leche, banana and toasted walnuts.",
+    tag: "New",
+  },
+  {
     id: "cinnamon-roll",
     name: "Cinnamon Swirl (2)",
     price: 3800,
@@ -94,6 +120,31 @@ export const PRODUCTS: Product[] = [
     category: "pastries",
     blurb: "Buttery laminated swirls, brown sugar and cinnamon.",
     tag: "Morning fave",
+  },
+  {
+    id: "cream-horns",
+    name: "Vanilla Cream Horns (3)",
+    price: 4200,
+    image: "/images/cream-horns.webp",
+    category: "pastries",
+    blurb: "Flaky puff pastry, piped vanilla custard, icing sugar snow.",
+  },
+  {
+    id: "pain-au-chocolat",
+    name: "Pain au Chocolat",
+    price: 2600,
+    image: "/images/pain-au-chocolat.webp",
+    category: "pastries",
+    blurb: "Butter-laminated dough wrapped around two dark chocolate batons.",
+  },
+  {
+    id: "grilled-cheese",
+    name: "Bacon Grilled Cheese",
+    price: 6500,
+    image: "/images/grilled-cheese.webp",
+    category: "savoury",
+    blurb: "Toasted sourdough, cheddar, mozzarella and crispy bacon.",
+    tag: "Lunch",
   },
   {
     id: "iced-latte",
@@ -130,11 +181,11 @@ export const PRODUCTS: Product[] = [
   },
 ];
 
-export const BEST_SELLERS = ["pink-sprinkle", "iced-latte", "lollipop-cupcake", "cinnamon-roll"].map(
+export const BEST_SELLERS = ["pink-sprinkle", "iced-latte", "berry-cupcake", "grilled-cheese"].map(
   (id) => PRODUCTS.find((p) => p.id === id)!
 );
 
-export const PREMIUM = ["choco-crunch", "boba-frappe", "strawberry-cupcake", "strawberry-shake"].map(
+export const PREMIUM = ["choco-crunch", "boba-frappe", "banoffee-cheesecake", "cream-horns"].map(
   (id) => PRODUCTS.find((p) => p.id === id)!
 );
 
