@@ -15,7 +15,7 @@ export function ProductCard({ product, compact = false, accent = false }: { prod
     >
       <div className={`relative overflow-hidden rounded-lg bg-sand ${compact ? "aspect-[5/4]" : "aspect-square"}`}>
         {product.tag && (
-          <span className="absolute left-2 top-2 z-10 rounded-full bg-cherry px-2.5 py-1 text-[10px] font-bold uppercase tracking-wider text-cream">
+          <span className="absolute left-2 top-2 z-10 rounded-full bg-cherry px-2.5 py-1 text-[11px] font-bold uppercase tracking-wider text-cream">
             {product.tag}
           </span>
         )}
@@ -31,10 +31,10 @@ export function ProductCard({ product, compact = false, accent = false }: { prod
         <h3 className={`font-condensed leading-tight ${compact ? "text-base" : "text-lg md:text-xl"}`}>{product.name}</h3>
         <span className={`shrink-0 font-mono font-semibold ${compact ? "text-sm" : "text-base"}`}>{formatNaira(product.price)}</span>
       </div>
-      {!compact && <p className="px-1.5 pt-1 font-mono text-[11px] leading-relaxed text-ink/60">{product.blurb}</p>}
+      {!compact && <p className="px-1.5 pt-1 font-mono text-xs leading-relaxed text-ink/75">{product.blurb}</p>}
       <button
         onClick={() => add(product.id)}
-        className={`btn mt-3 justify-center ${accent ? "btn-cherry" : "btn-cocoa"} ${compact ? "py-2 text-[10px]" : ""}`}
+        className={`btn mt-3 justify-center ${accent ? "btn-cherry" : "btn-cocoa"} ${compact ? "py-2 text-[11px]" : ""}`}
       >
         Add to cart
       </button>

@@ -11,7 +11,7 @@ type Props<T extends ElementType> = {
 /** Frosted, refracting glass surface whose specular highlight follows the pointer. */
 export function LiquidGlass<T extends ElementType = "div">({
   as,
-  refract = true,
+  refract = false,
   dark = false,
   className = "",
   onPointerMove,

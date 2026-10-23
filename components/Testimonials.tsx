@@ -31,7 +31,7 @@ export function Testimonials() {
           >
             <blockquote className="font-mono text-sm leading-relaxed">{QUOTES[i].q}</blockquote>
             <figcaption className="mt-4 font-condensed text-lg uppercase tracking-wide">
-              {QUOTES[i].a} <span className="text-cream/60">· {QUOTES[i].w}</span>
+              {QUOTES[i].a} <span className="text-cream/75">· {QUOTES[i].w}</span>
             </figcaption>
           </motion.figure>
         </AnimatePresence>

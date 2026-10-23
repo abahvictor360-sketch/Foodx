@@ -3,9 +3,10 @@
 import dynamic from "next/dynamic";
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useRef, useState } from "react";
 import { motion } from "framer-motion";
 import { LiquidGlass } from "./LiquidGlass";
+import { useOnScreen } from "./useOnScreen";
 
 const HeroScene = dynamic(() => import("./three/HeroScene"), {
   ssr: false,
@@ -27,6 +28,8 @@ const ease = [0.22, 1, 0.36, 1] as const;
 
 export function Hero() {
   const [flavour, setFlavour] = useState(0);
+  const canvasWrap = useRef<HTMLDivElement>(null);
+  const onScreen = useOnScreen(canvasWrap);
   return (
     <section className="doodle-bg relative min-h-[100svh] overflow-hidden bg-cocoa pt-28 md:pt-32">
       <div className="mx-auto max-w-6xl px-5">
@@ -57,23 +60,23 @@ export function Hero() {
           </div>
         </motion.div>
 
-        <div className="order-1 h-[46vh] min-h-[320px] md:order-2 md:h-[min(520px,62vh)]">
-          <HeroScene icing={FLAVOURS[flavour].icing} />
+        <div ref={canvasWrap} className="order-1 h-[46vh] min-h-[320px] md:order-2 md:h-[min(520px,62vh)]">
+          <HeroScene icing={FLAVOURS[flavour].icing} active={onScreen} />
         </div>
 
         <motion.div initial={{ opacity: 0, x: 30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.45, ease }} className="order-3 space-y-5 pb-10 md:pb-0">
-          <LiquidGlass className="inline-flex items-center gap-3 rounded-full px-4 py-2">
+          <LiquidGlass refract dark className="inline-flex items-center gap-3 rounded-full px-4 py-2">
             <span className="flex -space-x-2">
               {["#f29ab8", "#c9813a", "#4a2414"].map((c) => (
                 <span key={c} className="h-6 w-6 rounded-full border-2 border-cream" style={{ background: c }} />
               ))}
             </span>
             <span>
-              <span className="block text-[11px] tracking-wider text-yellow-300">★★★★★ 4.9</span>
-              <span className="block font-mono text-[10px] text-cream/80">2,400+ happy Lekki orders</span>
+              <span className="block text-xs tracking-wider text-yellow-300">★★★★★ 4.9</span>
+              <span className="block font-mono text-[11px] text-cream/90">2,400+ happy Lekki orders</span>
             </span>
           </LiquidGlass>
-          <p className="max-w-xs font-mono text-xs leading-relaxed text-cream/80">
+          <p className="max-w-xs font-mono text-sm leading-relaxed text-cream/90">
             Fresh brioche donuts, tall cupcakes and thick shakes — made every morning on Admiralty Way, Lekki Phase 1. Pick a glaze and watch it change.
           </p>
           <div className="flex gap-2" role="radiogroup" aria-label="Choose a glaze">
@@ -92,7 +95,7 @@ export function Hero() {
               </button>
             ))}
           </div>
-          <p className="font-mono text-[10px] uppercase tracking-widest text-cream/60">Glaze: {FLAVOURS[flavour].name}</p>
+          <p className="font-mono text-[11px] uppercase tracking-widest text-cream/75">Glaze: {FLAVOURS[flavour].name}</p>
         </motion.div>
       </div>
     </section>

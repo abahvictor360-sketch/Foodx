@@ -52,7 +52,7 @@ export function Navbar() {
               key={l.href}
               href={l.href}
               className={`relative text-xs font-semibold uppercase tracking-[0.14em] transition-colors hover:text-white ${
-                pathname === l.href ? "text-white" : "text-cream/80"
+                pathname === l.href ? "text-white" : "text-cream/90"
               }`}
             >
               {l.label}
@@ -70,7 +70,7 @@ export function Navbar() {
             </svg>
             <span className="hidden sm:inline">Cart</span>
             {count > 0 && (
-              <span className="absolute -right-2 -top-2 grid h-5 min-w-5 place-items-center rounded-full bg-cherry px-1 text-[10px] text-cream">
+              <span className="absolute -right-2 -top-2 grid h-5 min-w-5 place-items-center rounded-full bg-cherry px-1 text-[11px] text-cream">
                 {count}
               </span>
             )}

@@ -52,7 +52,7 @@ export function CartDrawer() {
               </div>
               <div className="mt-5 flex-1 space-y-3 overflow-y-auto pr-1">
                 {lines.length === 0 && (
-                  <p className="mt-10 text-center font-mono text-sm text-cream/70">Your box is empty. Go pick something sweet.</p>
+                  <p className="mt-10 text-center font-mono text-sm text-cream/85">Your box is empty. Go pick something sweet.</p>
                 )}
                 {lines.map(({ product, qty }) => (
                   <div key={product.id} className="flex items-center gap-3 rounded-2xl bg-cream/10 p-2.5">
@@ -61,7 +61,7 @@ export function CartDrawer() {
                     </div>
                     <div className="min-w-0 flex-1">
                       <p className="truncate font-condensed text-lg leading-tight">{product.name}</p>
-                      <p className="font-mono text-xs text-cream/70">{formatNaira(product.price)}</p>
+                      <p className="font-mono text-xs text-cream/85">{formatNaira(product.price)}</p>
                     </div>
                     <div className="flex items-center gap-1 rounded-full bg-ink/40 p-1">
                       <button className="h-7 w-7 rounded-full hover:bg-cream/20" onClick={() => setQty(product.id, qty - 1)} aria-label="Decrease">

@@ -46,7 +46,7 @@ function Treat({ url, pos, h }: { url: string; pos: [number, number, number]; h:
   );
 }
 
-function Crumbs({ count = 400 }) {
+function Crumbs({ count = 250 }) {
   const positions = useMemo(() => {
     const arr = new Float32Array(count * 3);
     for (let i = 0; i < count; i++) {
@@ -79,7 +79,7 @@ function Flight({ progress }: { progress: MutableRefObject<number> }) {
   useFrame((state, dt) => {
     const p = progress.current;
     const z = THREE.MathUtils.lerp(CAMERA_START, CAMERA_END, p);
-    camera.position.z = THREE.MathUtils.damp(camera.position.z, z, 4, dt);
+    camera.position.z = THREE.MathUtils.damp(camera.position.z, z, 7, dt);
     camera.position.x = THREE.MathUtils.damp(camera.position.x, state.pointer.x * 0.6, 2, dt);
     camera.position.y = THREE.MathUtils.damp(camera.position.y, state.pointer.y * 0.4, 2, dt);
     camera.lookAt(camera.position.x * 0.5, camera.position.y * 0.5, camera.position.z - 10);
@@ -116,10 +116,14 @@ function Flight({ progress }: { progress: MutableRefObject<number> }) {
   );
 }
 
-export default function ScrollWorldScene({ progress }: { progress: MutableRefObject<number> }) {
+export default function ScrollWorldScene({ progress, active = true }: { progress: MutableRefObject<number>; active?: boolean }) {
   return (
     // Wider lens on phones so the treats on the edges stay in frame
-    <Canvas camera={{ position: [0, 0, CAMERA_START], fov: window.innerWidth < 768 ? 72 : 50, near: 0.1, far: 60 }} dpr={[1, 1.5]}>
+    <Canvas camera={{ position: [0, 0, CAMERA_START], fov: window.innerWidth < 768 ? 72 : 50, near: 0.1, far: 60 }}
+      dpr={[1, 1.25]}
+      frameloop={active ? "always" : "never"}
+      gl={{ powerPreference: "high-performance" }}
+    >
       <StudioLights />
       <Suspense fallback={null}>
         <Flight progress={progress} />

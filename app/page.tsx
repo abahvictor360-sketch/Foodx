@@ -58,7 +58,7 @@ export default function Home() {
             <SectionTitle className="text-ink">
               The magic of a <br /> Foodx shake in <br /> your hand
             </SectionTitle>
-            <p className="mt-5 max-w-md font-mono text-xs leading-relaxed text-ink/70">
+            <p className="mt-5 max-w-md font-mono text-sm leading-relaxed text-ink/80">
               Real strawberries, proper vanilla ice cream and a groundnut crunch that sticks around till the last sip. Built thick
               enough for a spoon, cold enough for a Lekki afternoon.
             </p>
@@ -121,7 +121,7 @@ export default function Home() {
         <div className="relative mx-auto max-w-2xl px-5 text-center">
           <Reveal>
             <SectionTitle className="text-ink">Let&apos;s be partners</SectionTitle>
-            <p className="mx-auto mt-4 max-w-md font-mono text-xs leading-relaxed text-ink/70">
+            <p className="mx-auto mt-4 max-w-md font-mono text-sm leading-relaxed text-ink/80">
               Office trays, weddings, birthdays, cafés that want to stock Foodx — tell us what you&apos;re planning.
             </p>
           </Reveal>

@@ -21,7 +21,7 @@ export default function ContactPage() {
           <div className="grid gap-4">
             <Reveal>
               <LiquidGlass className="rounded-2xl p-6">
-                <p className="font-mono text-[11px] uppercase tracking-widest text-cream/70">Address</p>
+                <p className="font-mono text-xs uppercase tracking-widest text-cream/85">Address</p>
                 <p className="mt-2 font-condensed text-2xl uppercase leading-tight">
                   {BUSINESS.street}
                   <br />
@@ -34,7 +34,7 @@ export default function ContactPage() {
             </Reveal>
             <Reveal delay={0.08}>
               <LiquidGlass className="rounded-2xl p-6">
-                <p className="font-mono text-[11px] uppercase tracking-widest text-cream/70">Opening hours</p>
+                <p className="font-mono text-xs uppercase tracking-widest text-cream/85">Opening hours</p>
                 <ul className="mt-3 space-y-2 font-mono text-sm">
                   {BUSINESS.hours.map((h) => (
                     <li key={h.d} className="flex justify-between border-b border-cream/15 pb-2">
@@ -75,7 +75,7 @@ export default function ContactPage() {
         <div className="mx-auto max-w-2xl px-5">
           <Reveal className="text-center">
             <SectionTitle className="text-ink">Events &amp; partners</SectionTitle>
-            <p className="mx-auto mt-4 max-w-md font-mono text-xs leading-relaxed text-ink/70">
+            <p className="mx-auto mt-4 max-w-md font-mono text-sm leading-relaxed text-ink/80">
               Birthday towers, office breakfast trays, wedding dessert tables, or stocking Foodx in your café.
             </p>
           </Reveal>

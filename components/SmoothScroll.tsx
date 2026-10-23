@@ -10,8 +10,10 @@ export function SmoothScroll() {
   const pathname = usePathname();
 
   useEffect(() => {
-    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
-    lenis = new Lenis({ lerp: 0.1, smoothWheel: true });
+    // Touch devices already scroll natively and smoothly; only ease mouse wheels
+    const touch = window.matchMedia("(pointer: coarse)").matches;
+    if (touch || window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+    lenis = new Lenis({ lerp: 0.16, wheelMultiplier: 1.1, smoothWheel: true });
     let raf = 0;
     const loop = (t: number) => {
       lenis?.raf(t);

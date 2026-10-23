@@ -35,15 +35,15 @@ export default function AboutPage() {
           <Reveal>
             <div className="relative aspect-[4/5] overflow-hidden rounded-3xl">
               <Image src="/images/cake-float.jpg" alt="Layer cake slices with strawberries and honey" fill sizes="(max-width:768px) 100vw, 50vw" className="object-cover" />
-              <LiquidGlass className="absolute bottom-4 left-4 right-4 rounded-2xl p-4 text-cream">
+              <LiquidGlass dark className="absolute bottom-4 left-4 right-4 rounded-2xl p-4 text-cream">
                 <p className="font-condensed text-2xl uppercase">From a weekend stall</p>
-                <p className="font-mono text-[11px] text-cream/80">to Lekki&apos;s favourite sweet stop</p>
+                <p className="font-mono text-xs text-cream/90">to Lekki&apos;s favourite sweet stop</p>
               </LiquidGlass>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
             <SectionTitle className="text-ink">Sweet things, made properly</SectionTitle>
-            <div className="mt-6 space-y-4 font-mono text-xs leading-relaxed text-ink/75">
+            <div className="mt-6 space-y-4 font-mono text-sm leading-relaxed text-ink/75">
               <p>
                 We wanted a place in Lekki where a donut tasted like it was made that morning — because it was. So we built a small
                 kitchen on Admiralty Way, started frying at 5am, and kept the menu short enough to get every item right.
@@ -66,7 +66,7 @@ export default function AboutPage() {
             <Reveal key={s.l} delay={i * 0.08}>
               <LiquidGlass className="rounded-2xl p-6 text-center">
                 <p className="font-display text-5xl">{s.n}</p>
-                <p className="mt-2 font-mono text-[11px] text-cream/80">{s.l}</p>
+                <p className="mt-2 font-mono text-xs text-cream/90">{s.l}</p>
               </LiquidGlass>
             </Reveal>
           ))}
@@ -84,9 +84,9 @@ export default function AboutPage() {
             {VALUES.map((v, i) => (
               <Reveal key={v.t} delay={i * 0.1}>
                 <div className="h-full rounded-2xl bg-cocoa p-7 text-cream">
-                  <p className="font-mono text-xs text-cream/60">0{i + 1}</p>
+                  <p className="font-mono text-xs text-cream/75">0{i + 1}</p>
                   <h3 className="mt-2 font-condensed text-3xl uppercase">{v.t}</h3>
-                  <p className="mt-3 font-mono text-xs leading-relaxed text-cream/80">{v.d}</p>
+                  <p className="mt-3 font-mono text-sm leading-relaxed text-cream/90">{v.d}</p>
                 </div>
               </Reveal>
             ))}

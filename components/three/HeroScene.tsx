@@ -89,9 +89,14 @@ function FallingSprinkles({ count = 70 }) {
   );
 }
 
-export default function HeroScene({ icing }: { icing: string }) {
+export default function HeroScene({ icing, active = true }: { icing: string; active?: boolean }) {
   return (
-    <Canvas camera={{ position: [0, 0, 6], fov: 35 }} dpr={[1, 1.75]} gl={{ antialias: true, alpha: true }}>
+    <Canvas
+      camera={{ position: [0, 0, 6], fov: 35 }}
+      dpr={[1, 1.5]}
+      frameloop={active ? "always" : "never"}
+      gl={{ antialias: true, alpha: true, powerPreference: "high-performance" }}
+    >
       <StudioLights />
       <FallingSprinkles />
       <Rig>

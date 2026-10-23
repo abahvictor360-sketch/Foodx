@@ -8,7 +8,7 @@ export function PageHeader({ kicker, title, image, children }: { kicker: string;
     <section className="doodle-bg relative overflow-hidden bg-cocoa pb-16 pt-32 md:pb-20 md:pt-40">
       <div className="mx-auto grid max-w-6xl items-end gap-8 px-5 md:grid-cols-[1.4fr_1fr]">
         <div>
-          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="font-mono text-xs uppercase tracking-[0.3em] text-cream/70">
+          <motion.p initial={{ opacity: 0 }} animate={{ opacity: 1 }} className="font-mono text-xs uppercase tracking-[0.3em] text-cream/85">
             {kicker}
           </motion.p>
           <motion.h1
@@ -19,7 +19,7 @@ export function PageHeader({ kicker, title, image, children }: { kicker: string;
           >
             {title}
           </motion.h1>
-          {children && <div className="mt-5 max-w-md font-mono text-xs leading-relaxed text-cream/80">{children}</div>}
+          {children && <div className="mt-5 max-w-md font-mono text-sm leading-relaxed text-cream/90">{children}</div>}
         </div>
         {image && (
           <motion.div

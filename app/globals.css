@@ -51,18 +51,21 @@ html.lenis body {
   position: relative;
   isolation: isolate;
   background: linear-gradient(135deg, rgba(255, 255, 255, 0.16), rgba(255, 255, 255, 0.04));
-  backdrop-filter: blur(14px) saturate(170%);
-  -webkit-backdrop-filter: blur(14px) saturate(170%);
+  backdrop-filter: blur(12px) saturate(160%);
+  -webkit-backdrop-filter: blur(12px) saturate(160%);
   box-shadow:
     inset 0 1px 0 rgba(255, 255, 255, 0.45),
     inset 0 -1px 0 rgba(255, 255, 255, 0.08),
     inset 0 0 18px rgba(255, 255, 255, 0.08),
     0 10px 30px -12px rgba(30, 10, 8, 0.45);
 }
-/* Chromium supports SVG filters inside backdrop-filter, which gives the refracted edge */
-@supports (backdrop-filter: url(#x)) {
-  .liquid-glass.refract {
-    backdrop-filter: blur(14px) url(#liquid-glass) saturate(170%);
+/* Chromium supports SVG filters inside backdrop-filter, which gives the refracted edge.
+   It is expensive, so only static elements opt in, and only on desktop pointers. */
+@media (hover: hover) and (pointer: fine) {
+  @supports (backdrop-filter: url(#x)) {
+    .liquid-glass.refract {
+      backdrop-filter: blur(12px) url(#liquid-glass) saturate(170%);
+    }
   }
 }
 .liquid-glass::before {
@@ -194,4 +197,9 @@ html.lenis body {
   .animate-floaty {
     animation: none;
   }
+}
+
+/* Keeps light type legible when it sits over photos or the 3D scene */
+.text-shadow-soft {
+  text-shadow: 0 2px 18px rgba(30, 12, 10, 0.55), 0 1px 3px rgba(30, 12, 10, 0.45);
 }

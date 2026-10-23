@@ -68,7 +68,7 @@ export function GalleryGrid() {
               className={`h-auto w-full transition-transform duration-700 group-hover:scale-105 ${s.cutout ? "p-8 drop-shadow-[0_20px_20px_rgba(0,0,0,0.3)]" : ""}`}
             />
             <span className="absolute inset-x-3 bottom-3 translate-y-4 opacity-0 transition group-hover:translate-y-0 group-hover:opacity-100">
-              <LiquidGlass className="rounded-xl px-3 py-2 text-left font-mono text-[11px] text-cream">{s.alt}</LiquidGlass>
+              <LiquidGlass dark className="rounded-xl px-3 py-2 text-left font-mono text-xs text-cream">{s.alt}</LiquidGlass>
             </span>
           </motion.button>
         ))}

@@ -43,7 +43,7 @@ export function Checkout() {
     return (
       <section className="bg-cream py-24 text-center text-ink">
         <h2 className="font-display text-6xl uppercase">Order sent!</h2>
-        <p className="mx-auto mt-4 max-w-sm font-mono text-xs text-ink/70">We&apos;ll confirm on WhatsApp in a few minutes. Get the plates ready.</p>
+        <p className="mx-auto mt-4 max-w-sm font-mono text-xs text-ink/80">We&apos;ll confirm on WhatsApp in a few minutes. Get the plates ready.</p>
         <Link href="/menu" className="btn btn-cherry mt-8">
           Back to the menu
         </Link>
@@ -57,7 +57,7 @@ export function Checkout() {
         <div>
           <h2 className="font-condensed text-3xl font-bold uppercase">Items</h2>
           {lines.length === 0 && (
-            <p className="mt-6 font-mono text-sm text-ink/60">
+            <p className="mt-6 font-mono text-sm text-ink/75">
               Nothing here yet.{" "}
               <Link href="/menu" className="text-cherry underline">
                 Browse the menu
@@ -73,8 +73,8 @@ export function Checkout() {
                 </div>
                 <div className="min-w-0 flex-1">
                   <p className="font-condensed text-xl leading-tight">{product.name}</p>
-                  <p className="font-mono text-xs text-ink/60">{formatNaira(product.price)} each</p>
-                  <button onClick={() => remove(product.id)} className="mt-1 font-mono text-[11px] text-cherry underline">
+                  <p className="font-mono text-xs text-ink/75">{formatNaira(product.price)} each</p>
+                  <button onClick={() => remove(product.id)} className="mt-1 font-mono text-xs text-cherry underline">
                     Remove
                   </button>
                 </div>
@@ -118,7 +118,7 @@ export function Checkout() {
               <dt>Subtotal</dt>
               <dd>{formatNaira(subtotal)}</dd>
             </div>
-            <div className="flex justify-between text-cream/70">
+            <div className="flex justify-between text-cream/85">
               <dt>{mode === "delivery" ? "Delivery (Lekki)" : "Pickup"}</dt>
               <dd>{fee ? formatNaira(fee) : "Free"}</dd>
             </div>
