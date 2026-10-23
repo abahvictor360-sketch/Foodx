@@ -104,10 +104,10 @@ function Flight({ progress }: { progress: MutableRefObject<number> }) {
         <Treat key={p.url} {...p} />
       ))}
       <Float speed={1.2} floatIntensity={0.6}>
-        <Donut icing="#f29ab8" position={[0, -0.2, -9]} rotation={[-1.1, 0, 0]} scale={0.8} spin={0.5} />
+        <Donut icing="#f29ab8" position={[-1.7, -0.9, -9]} rotation={[-1.1, 0, 0]} scale={0.8} spin={0.5} />
       </Float>
       <Float speed={1.2} floatIntensity={0.6}>
-        <Donut icing="#4a2414" position={[0.4, 0.2, -20]} rotation={[-0.9, 0.4, 0]} scale={0.8} spin={-0.4} />
+        <Donut icing="#4a2414" position={[1.8, 1.0, -20]} rotation={[-0.9, 0.4, 0]} scale={0.8} spin={-0.4} />
       </Float>
       <group ref={finale} position={[0, 0, FINALE_Z]}>
         <Donut icing="#f6eecf" rotation={[-1.2, 0, 0]} sprinkles={220} spin={0.35} />

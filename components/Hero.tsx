@@ -37,15 +37,15 @@ export function Hero() {
           initial={{ opacity: 0, y: 60 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 1, ease }}
-          className="text-center font-display text-[min(17vw,24vh)] uppercase leading-[0.95] text-cream md:leading-[0.85] md:text-[min(9.5rem,24vh)]"
+          className="text-center font-display text-[min(17vw,24vh)] uppercase leading-[0.95] text-cream md:leading-[0.85] md:text-[min(13vw,20vh)] md:landscape:text-[min(9.5rem,24vh)] lg:text-[min(9.5rem,24vh)]"
         >
           Coffee &amp; Cream
         </motion.h1>
       </div>
 
-      <div className="relative mx-auto grid max-w-6xl items-center gap-6 px-5 md:grid-cols-[1fr_1.3fr_1fr]">
-        <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.3, ease }} className="order-2 md:order-1">
-          <p className="font-condensed text-4xl leading-[1.05] md:text-4xl lg:text-5xl">
+      <div className="relative mx-auto grid max-w-6xl items-center gap-6 px-5 md:grid-cols-2 md:gap-x-10 md:landscape:grid-cols-[1fr_1.3fr_1fr] md:landscape:gap-6 lg:grid-cols-[1fr_1.3fr_1fr] lg:gap-6">
+        <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }} transition={{ duration: 1, delay: 0.3, ease }} className="order-2 md:landscape:order-1 lg:order-1">
+          <p className="font-condensed text-4xl leading-[1.05] md:text-5xl md:landscape:text-4xl lg:text-4xl xl:text-5xl">
             Smiles, poured
             <br />
             one cup at a time
@@ -60,7 +60,7 @@ export function Hero() {
           </div>
         </motion.div>
 
-        <div ref={canvasWrap} className="order-1 h-[46vh] min-h-[320px] md:order-2 md:h-[min(520px,62vh)]">
+        <div ref={canvasWrap} className="order-1 h-[46vh] min-h-[320px] md:col-span-2 md:h-[min(460px,42vh)] md:landscape:order-2 md:landscape:col-span-1 md:landscape:h-[min(520px,62vh)] lg:order-2 lg:col-span-1 lg:h-[min(520px,62vh)]">
           <HeroScene brew={BREWS[brew].brew} active={onScreen} />
         </div>
 

@@ -46,18 +46,18 @@ export function Navbar() {
         <Link href="/" className="font-display text-3xl tracking-wide text-cream">
           FOODX
         </Link>
-        <nav className="hidden items-center gap-7 md:flex">
+        <nav className="hidden items-center gap-1 md:flex lg:gap-3">
           {LINKS.map((l) => (
             <Link
               key={l.href}
               href={l.href}
-              className={`relative text-xs font-semibold uppercase tracking-[0.14em] transition-colors hover:text-white ${
+              className={`relative px-2.5 py-3 text-xs font-semibold uppercase tracking-[0.14em] transition-colors hover:text-white ${
                 pathname === l.href ? "text-white" : "text-cream/90"
               }`}
             >
               {l.label}
               {pathname === l.href && (
-                <motion.span layoutId="nav-dot" className="absolute -bottom-2 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-cream" />
+                <motion.span layoutId="nav-dot" className="absolute bottom-1 left-1/2 h-1 w-1 -translate-x-1/2 rounded-full bg-cream" />
               )}
             </Link>
           ))}
